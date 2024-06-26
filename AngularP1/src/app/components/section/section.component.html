@@ -1,0 +1,8 @@
+<ul class="nav-bar">
+    @for (item of sectionsList; track $index) {
+        <li>
+            <a href="#{{item.type}}"> <h2 class="text-red-700">{{item.title}}</h2> </a>
+        </li>
+    }
+</ul>
+

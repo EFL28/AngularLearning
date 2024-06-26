@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+  color: black;
+}
+
+body.dark-theme {
+  background-color: rgb(70, 69, 69);
+  color: white;
+}
+
+@layer base {
+  label {
+    @apply font-semibold text-lg mb-1 block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select {
+    @apply w-full p-2 border border-gray-300 mb-2;
+  }
+}

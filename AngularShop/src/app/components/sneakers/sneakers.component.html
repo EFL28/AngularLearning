@@ -1,0 +1,15 @@
+<div class="flex items-center justify-between p-12">
+    @for (sneaker of products; track $index) {
+        <div class="border rounded-md">
+            <img src="{{ sneaker.imageURL }}" alt="Imagen de {{ sneaker.name }}" class="w-96">
+            <div class="border-t-2 p-2">
+                @if(sneaker.sale){
+                    <span class="text-green-500 text-lg">Oferta</span>
+                }
+                <h2 class="font-semibold text-2xl">{{ sneaker.name }}</h2>
+                <p class="text-xl">{{ sneaker.price }} €</p>
+                <button class="bg-slate-600 text-white p-2 rounded-md mt-2" (click)="addToCart(sneaker)">Añadir al carrito</button>
+            </div>
+        </div>
+    }
+</div>

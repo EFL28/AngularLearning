@@ -1,0 +1,100 @@
+<div class="flex justify-center items-center mt-28">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="w-2/3 border-gray-300  border-4 m-5 p-5 rounded-md">
+        <div class="form-group">
+            <label for="reference">Reference number</label>
+            <input type="number" class="form-control rounded-lg" id="reference" formControlName="reference" [ngClass]="invalidInput"
+                placeholder="Introduce the reference number">
+
+            @if(reference?.invalid && reference?.dirty && reference?.touched){
+                <div class="text-red-500">Reference is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control rounded-lg" id="name" formControlName="name" placeholder="Introduce the name">
+
+            @if(name?.invalid && name?.dirty && name?.touched){
+                <div class="text-red-500">Name is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control p-2 resize-none mb-3 rounded-lg w-full border-gray-300 border-2" id="description" formControlName="description"
+                placeholder="Introduce the description"></textarea>
+
+            @if(description?.invalid && description?.dirty && description?.touched){
+                <div class="text-red-500">description is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control rounded-lg" id="price" formControlName="price"
+                placeholder="Introduce the price">
+
+            @if(price?.invalid && price?.dirty && price?.touched){
+                <div class="text-red-500">Price is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control rounded-lg" id="category" formControlName="category" placeholder="Chose the category">
+                <option value="1">Sneakers</option>
+                <option value="2">Jerseys</option>
+                <option value="3">Soccer Cleats</option>
+            </select>
+
+            @if(category?.invalid && category?.touched){
+                <div class="text-red-500">Category is required</div>
+            }
+
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control rounded-lg" id="stock" formControlName="stock"
+                placeholder="Introduce the stock">
+
+            @if(stock?.errors?.['min']){
+                <div class="text-red-500">Stock must be greater than 100</div>
+            }
+            @else if (stock?.dirty && stock?.touched && stock?.invalid){
+                <div class="text-red-500">Stock is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="sale">Sale</label>
+            <input type="checkbox" name="sale" id="sale" formControlName="sale">
+
+            @if(sale?.invalid && sale?.touched){
+                <div class="text-red-500">Sale is required</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="imageURL0">Image URL</label>
+            <input type="text" class="form-control rounded-lg" id="imageURL0" formControlName="imageURL" placeholder="Introduce the image URL">
+        </div> 
+
+        <!-- @for (url of imageURLs; track url; let i = $index;) {
+            <div class="form-group">
+                <label for="imageURL{{i+1}}">Image URL</label>
+                <input type="text" class="form-control" id="imageURL{{i+1}}" formControlName="imageURL" placeholder="Introduce the image URL">
+            </div>       
+        }
+        <button type="button" (click)="addImageUrlField()">Add another image URL</button> -->
+
+        <!-- <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" formControlName="image">
+        </div> -->
+
+        <div class="form-group flex justify-center items-center">
+            <button type="submit" class="mt-2 rounded bg-blue-600 text-white py-3 px-6 cursor-pointer hover:bg-blue-hover disabled:bg-gray-500 disabled:cursor-not-allowed" [disabled]="productForm.invalid">Add product</button>
+        </div>
+    </form>
+</div>

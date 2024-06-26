@@ -1,0 +1,20 @@
+<!--  mostrar los productos añadidos al carrito -->
+
+<div class="mt-4 mb-28">
+    <div>
+        <h1 class="mb-4 text-4xl font-semibold text-center">Carrito de la compra</h1>
+    </div>
+    <div class="flex justify-center">
+        <ul>
+            @for (product of cart; track $index) {
+                <li class="border rounded-md flex flex-col mb-4">
+                    <img src="{{ product.imageURL }}" alt="Imagen de {{ product.name }}" class="w-auto h-48 object-cover">
+                    <div class="border-t-2 p-2 flex-1">
+                        <h2 class="font-semibold text-xl">{{ product.name }}</h2>
+                        <p class="text-lg">{{ product.price }} €</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

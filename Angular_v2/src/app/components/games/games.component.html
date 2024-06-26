@@ -1,0 +1,8 @@
+<div class="contenedor">
+    @for (match of games; track $index) {
+        <div class="elemento">
+            <img src="{{match.image}}" alt="escudo" class="img-fluid">
+            <p>{{match.match}}</p>
+        </div>
+    }
+</div>

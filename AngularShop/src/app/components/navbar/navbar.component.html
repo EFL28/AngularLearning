@@ -1,0 +1,10 @@
+<ul class="navbar pt-4 pb-4 border-b-2 border-black align-middle">
+    @for (item of sectionsList; track $index) {
+        <li>
+            <h2 routerLink="{{item.type}}" class="font-semibold text-xl">{{item.title}}</h2>
+        </li>
+    }
+    <li>
+        <h2 routerLink="admin" class="font-semibold text-xl">Admin</h2>
+    </li>
+</ul>

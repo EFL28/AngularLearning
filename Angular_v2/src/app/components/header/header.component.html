@@ -1,0 +1,18 @@
+<!-- <header>
+    <img src="assets/img/logo.png" alt="logo" />
+    <h1>Angular</h1>
+    <button>Modo Light</button>
+</header> -->
+
+<div class="default-header">
+    <div class="logo-container" routerLink="/">
+        <img src="../../../assets/furbo.png" alt="">
+    </div>
+    <div class="title-container">
+        <h1 class="text-4xl font-bold">{{title}}</h1>
+    </div>
+    <div class="theme-switch-container" (click)="changeClass()">
+        <fa-icon [icon]="theme === 'light' ? lightTheme : darkTheme"></fa-icon>
+    </div>
+</div>
+<app-navbar></app-navbar>

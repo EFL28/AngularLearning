@@ -1,0 +1,15 @@
+<div class="flex items-center justify-between p-12">
+    @for (jersey of products; track $index) {
+        <div class="border rounded-md">
+            <img src="{{ jersey.imageURL }}" alt="Imagen de {{ jersey.name }}" class="w-96"> <!-- src="../../../assets/nike.png"   -->
+            <div class="border-t-2 p-2">
+                @if(jersey.sale){
+                    <span class="text-green-500 text-lg">Oferta</span>
+                }
+                <h2 class="font-semibold text-2xl">{{ jersey.name }}</h2>
+                <p class="text-xl">{{ jersey.price }} €</p>
+                <button class="bg-slate-600 text-white p-2 rounded-md mt-2" (click)="addToCart(jersey)">Añadir al carrito</button>
+            </div>
+        </div>
+    }
+</div>

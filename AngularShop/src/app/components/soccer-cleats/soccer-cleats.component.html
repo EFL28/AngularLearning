@@ -1,0 +1,15 @@
+<div class="flex items-center justify-between p-12">
+    @for (shirt of products; track $index) {
+        <div class="border rounded-md">
+            <img src="{{ shirt.imageURL }}" alt="Imagen de {{ shirt.name }}" class="w-96">
+            <div class="border-t-2 p-2">
+                @if(shirt.sale){
+                    <span class="text-green-500 text-lg">Oferta</span>
+                }
+                <h2 class="font-semibold text-2xl">{{ shirt.name }}</h2>
+                <p class="text-xl">{{ shirt.price }} €</p>
+                <button class="bg-slate-600 text-white p-2 rounded-md mt-2" (click)="addToCart(shirt)">Añadir al carrito</button>
+            </div>
+        </div>
+    }
+</div>

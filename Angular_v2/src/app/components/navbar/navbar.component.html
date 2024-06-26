@@ -1,0 +1,7 @@
+<ul class="navbar">
+    @for (item of sectionsList; track $index) {
+        <li>
+            <h2 routerLink="{{item.type}}">{{item.title}}</h2>
+        </li>
+    }
+</ul>

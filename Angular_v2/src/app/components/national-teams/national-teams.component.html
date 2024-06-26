@@ -1,0 +1,8 @@
+<div class="contenedor">
+    @for (nt of nationalTeams; track $index) {
+        <div class="elemento">
+            <img src="{{nt.image}}" alt="escudo">
+            <p>{{nt.name}}</p>
+        </div>
+    }
+</div>

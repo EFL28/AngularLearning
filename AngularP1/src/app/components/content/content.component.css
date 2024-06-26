@@ -1,0 +1,47 @@
+.section-clubs,
+.section-national-team,
+.section-games {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
+
+
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-size: cover;
+    filter: blur(5px);
+    position: relative;
+}
+
+.section-clubs {
+    background-image: url('../../../assets/Clubes.jpeg');
+}
+
+.section-national-team {
+    background-image: url('../../../assets/national-teams.jpg');
+}
+
+.section-games {
+    background-image: url('../../../assets/games.jpeg');
+}
+
+.section-content {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.section-content p{
+    text-align: center;
+    /* color: black; */
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 1;
+    margin-top: 20px;
+    
+}

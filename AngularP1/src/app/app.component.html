@@ -1,0 +1,9 @@
+
+<div [ngClass]="theme">
+  <app-header (themeChange)="changeTheme()"></app-header>
+  <app-content></app-content>
+  <app-footer></app-footer>
+</div>
+
+
+<router-outlet />
